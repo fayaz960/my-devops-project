@@ -1,11 +1,12 @@
-FROM python:3.12-slim  # Start with a lightweight Python 3.12 image.
+FROM python:3.12-slim
 
-WORKDIR /app  # Set working directory in the container.
+WORKDIR /app
 
-COPY requirements.txt requirements.txt  # Copy dependencies file.
-RUN pip install -r requirements.txt  # Install dependencies.
+# Correctly reference the path to requirements.txt in the app/ folder
+COPY ./app/requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
-COPY . .  # Copy all files to the container.
+# Copy all files from app/ folder to the container
+COPY ./app/ .
 
-CMD ["python", "app.py"]  # Run the app.
-
+CMD ["python", "app.py"]
