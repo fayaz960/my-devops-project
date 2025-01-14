@@ -1,4 +1,4 @@
-FROM python:3.9-slim  # Start with a lightweight Python image.
+FROM python:3.12-slim  # Start with a lightweight Python 3.12 image.
 
 WORKDIR /app  # Set working directory in the container.
 
